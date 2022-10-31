@@ -26,10 +26,11 @@ function App() {
 
     //handle the checkbox
     const handleChange = (event)=>{
-        //get the checkbox,find if it´s checked
+        
         let optionalProducts = [...memoryProduct];
 
         let key = 'price';
+        //get the checkbox,find if it´s checked
         if(event.target.id === 'cbox2'){
             setIsChecked(event.target.checked);
             optionalProducts = event.target.checked ? optionalProducts.filter(p=>p.sales_price>0):[...optionalProducts];
@@ -38,7 +39,7 @@ function App() {
     
         
         //if it´s checked, create an array to store the products or onsales products
- 
+        
 
         //get the value of menu
         let option = document.getElementById('menu').value;
@@ -58,6 +59,8 @@ function App() {
           }
         
       };
+    
+   
 
 
     const onAddProduct = (product) => {
