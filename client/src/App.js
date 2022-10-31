@@ -7,14 +7,18 @@ import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [filterProducts, setFilterProducts] = useState([]); //store those products are on sale
+  const [memoryProduct, setMemoryProduct] = useState([]); //store those products are on sale
   const [isChecked, setIsChecked] = useState(false);
-
+  // let memoryProduct = [];
     // useEffect() will call getProducts() when App is mounted on the DOM
     useEffect(()=>{
         getProducts().then((response) => {
-          setProducts(response);
-          setFilterProducts([...response]);
+          if(response.length>0){
+            setMemoryProduct(response);
+            setProducts([...response]);
+          }
+          
+          // setFilterProducts([...response]);
         }).catch((err) => {
             console.log(`Server error: ${err.message}`);
         })
@@ -23,14 +27,18 @@ function App() {
     //handle the checkbox
     const handleChange = (event)=>{
         //get the checkbox,find if it´s checked
-        let optionalProducts;
+        let optionalProducts = [...memoryProduct];
+
+        let key = 'price';
         if(event.target.id === 'cbox2'){
-            setIsChecked(!isChecked);
+            setIsChecked(event.target.checked);
+            optionalProducts = event.target.checked ? optionalProducts.filter(p=>p.sales_price>0):[...optionalProducts];
+            key = event.target.checked ? 'sales_price' : 'price';
         }
-        optionalProducts = event.target.checked ? products.filter(p=>p.sales_price>0):[...products];
+    
         
         //if it´s checked, create an array to store the products or onsales products
-        let key = (event.target.checked)? 'sales_price' : 'price';
+ 
 
         //get the value of menu
         let option = document.getElementById('menu').value;
@@ -38,15 +46,15 @@ function App() {
         //if the menu is priceAscent, sort it in the ascending order
         if(option === 'priceAscent'){
 
-            setFilterProducts(optionalProducts.sort((a,b)=>a[key]- b[key]));
+            setProducts(optionalProducts.sort((a,b)=>a[key]- b[key]));
 
             //else the menu is priceDescent, sort it in the descending order
           }else if(option === 'priceDescent'){
     
-            setFilterProducts(optionalProducts.sort((a,b)=>b[key]- a[key]));
+            setProducts(optionalProducts.sort((a,b)=>b[key]- a[key]));
     
           }else{
-            setFilterProducts(optionalProducts);
+            setProducts(optionalProducts);
           }
         
       };
@@ -110,7 +118,7 @@ function App() {
                 </div>
 
             <CollectionList 
-                products={filterProducts} 
+                products={products} 
                 setProducts = {setProducts}
                 deleteProduct = {onDeleteProduct}
                

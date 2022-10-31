@@ -1,25 +1,25 @@
-export const getProducts = () => {
-    return fetch('/products')
-      .then((response) => response.json());  
+export const getProducts =  () => {
+   
+  return  fetch('/products').then((response)=> response.json());  
 }
 
-export const addProduct = (product) => {
+export const addProduct =  (product) => {
   let options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product)
 };
 
-  return fetch('/products', options)
-          .then((response) => response.json()); 
+  const response =  fetch('/products', options);
+  return  response.json(); 
 }
 
-export const deleteProduct = (id) => {
+export const deleteProduct =  (id) => {
   let options = {
     method: 'DELETE'
 };
-  return fetch(`/products/${id}`, options)
-    .then((response) => response.json());
+  const response =  fetch(`/products/${id}`, options);
+  return  response.json();
 }
 
 //  // GET all Products
