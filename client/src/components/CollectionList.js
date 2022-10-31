@@ -1,31 +1,39 @@
 import React from 'react';
-import { deleteProduct } from '../services';
+import '../App.css';
 
-function CollectionList({products, setProducts}) {
+function CollectionList(props) {
 
-  const onDeleteProduct = (id) => {
-    deleteProduct(id).then((response) => {
-        setProducts(response);
-      }).catch((err) => {
-        console.log(`Server error: ${err.message}`);
-      })
-};
 
     return (
         <div className="CollectionList">
   
         <ul>
-          {products.map(p => (
-            <li key={p.id}>
-              <span onClick={p => (p.id)}>
-                <img src={p.img} alt=''/> {p.name} {p.price} {p.sales_price}
-              </span>
+          {
+            props.products.map(p => (
+              <li key={p.id}>
+                <span onClick={p => (p.id)}>
+                  <img src={p.img} alt=''/> {p.name} 
+                  {
+                    p.sales_price>0 ? 
+                    <p className='salesPrice'><span className="badge text-bg-danger" >On sales!</span> {p.sales_price}€ now!</p> : 
+                    <p> {p.price}€ Be patient!</p>
+                  }
+                </span>
 
-              <button onClick={() => {onDeleteProduct(p.id)}} type="button">
-                X
-              </button>
-            </li>
-          ))}
+                <a href={p.link}>
+                <button className="btn btn-dark" type="button">
+                  Buy
+                </button>
+                </a>
+
+                <button  className="btn btn-outline-dark" onClick={() => {props.deleteProduct(p.id)}} type="button">
+                  Delete X
+                </button>
+                
+              </li>
+            )) 
+          }
+
         </ul>
       </div>
     );

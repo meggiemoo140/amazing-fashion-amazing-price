@@ -31,18 +31,28 @@ function AddProductForm(props) {
 
     return (
         <form className="AddProductForm" onSubmit={handleSubmit}>
-            <label>
-                <input
-                    className='search input'
-                    placeholder='Enter an url ' 
-                    type="text"
-                    value={formData.link}
-                    onChange={handleChange} 
-                />
-            </label>
-            <button type="submit">Add</button>
+            <nav className="navbar">
+                <div className="container-fluid">
+                    <a className="navbar-brand">
+                        Amazing Price
+                        <img src="https://emojipedia-us.s3.amazonaws.com/source/noto-emoji-animations/344/smiling-face-with-heart-eyes_1f60d.gif" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"></img>
+                    </a>
+                    {/* <form class="d-flex" role="search"> */}
+                    <input 
+                        className="form-control me-2" 
+                        type="search" 
+                        value={formData.link}
+                        onChange={handleChange} 
+                        placeholder="Enter an url" 
+                        aria-label="Search"
+                    />
+                    <button className="btn btn-outline-success" type="submit">Add</button>
+                    {/* </form> */}
+                </div>
+            </nav>
         </form>
     );
+
 }
 
 export default AddProductForm;

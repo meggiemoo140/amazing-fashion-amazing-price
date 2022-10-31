@@ -1,17 +1,21 @@
-html {
+.App {
   background-image: url('https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiYWNrZ3JvdW5kJTIwY2xvdGhlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ;
 }
 
-.App {
+/* .App {
   text-align: center;
+} */
+
+.navbar {
+  background-color: rgb(194, 140, 51);
+}
+
+.salesPrice {
+  color: red;
+  
 }
 
 h1 {
-  color: rgb(160, 110, 10);
-  text-align: center;
-}
-
-h2 {
   color: rgb(246, 245, 244);
   text-align: center;
 }
