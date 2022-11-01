@@ -56,7 +56,7 @@ INSERT INTO products (itemId, name, price, img, link, sales_price )
 VALUES
     (   
         '2111785',
-        'TOP PUNTO FLECOS',
+        'Top punto flecos',
         22.95,
         'https://static.zara.net/photos///2022/I/0/1/p/4938/111/800/2/w/496/4938111800_2_3_1.jpg?ts=1666960081819',
         'https://www.zara.com/es/es/top-punto-flecos-p04938111.html?v1=201963805&v2=2111785',
@@ -65,7 +65,7 @@ VALUES
 
     (
         '06605722',
-        'VESTIDO LENCERO BAJO ABERTURA',
+        'Vestido lencero bajo abertura',
         89.95,
         'https://static.massimodutti.net/3/photos//2022/I/0/1/p/6605/722/726/6605722726_2_6_16.jpg?t=1662547412145&impolicy=massimodutti-itxmediumhigh&imwidth=600&imformat=chrome',
         'https://www.massimodutti.com/es/vestido-lencero-bajo-abertura-l06605722',
@@ -74,7 +74,7 @@ VALUES
 
     (
         '06022672',
-        'AMERICANA TRAJE CON LANA',
+        'Americana traje con lana',
         149.00,
         'https://static.massimodutti.net/3/photos//2022/I/0/1/p/6022/672/306/6022672306_2_5_16.jpg?t=1661867920982&impolicy=massimodutti-itxmediumhigh&imwidth=500&imformat=chrome',
         'https://www.massimodutti.com/es/americana-traje-con-lana-l06022672',

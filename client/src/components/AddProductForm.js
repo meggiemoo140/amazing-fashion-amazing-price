@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 
 
@@ -37,7 +38,7 @@ function AddProductForm(props) {
                         Amazing Price
                         <img src="https://emojipedia-us.s3.amazonaws.com/source/noto-emoji-animations/344/smiling-face-with-heart-eyes_1f60d.gif" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"></img>
                     </a>
-                    {/* <form class="d-flex" role="search"> */}
+                 
                     <input 
                         className="form-control me-2" 
                         type="search" 
@@ -46,8 +47,8 @@ function AddProductForm(props) {
                         placeholder="Enter an url" 
                         aria-label="Search"
                     />
-                    <button className="btn btn-outline-success" type="submit">Add</button>
-                    {/* </form> */}
+                    <button className="btn btn-outline-success" type="submit">Add to my list</button>
+             
                 </div>
             </nav>
         </form>

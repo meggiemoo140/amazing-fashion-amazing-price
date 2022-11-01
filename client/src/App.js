@@ -83,49 +83,51 @@ function App() {
   return (
     <div className="App">
 
-           
-
             <AddProductForm addProductCb={onAddProduct} />
 
-            <h1>My Collection list</h1>
-             
-                  {/* <!-- Product Order Menu --> */}
-                  <div className="container-table">
-                      <form id="product-form" >
-                        
-                        <div className="label">
-                          <p>Order by:&nbsp;</p>
-                        </div>
-                        <div className="drop-box">
-                          <select 
-                            id = "menu"
-                            onChange = {handleChange} 
-                            className = "category-box" name="prod-type" >
+            <div className="wrapper">
+              <h1>My Collection list</h1>
+
+               {/* <!-- Product Order Menu --> */}
+              <div className="container-table">
+                  <form id="product-form" >    
+                    <div className="orderList">
+                        <strong>Order by:</strong>
+                    </div>
+                    <div className="drop-box">
+                        <select 
+                          id = "menu"
+                          onChange = {handleChange} 
+                          className = "category-box" 
+                          name="prod-type" 
+                        >
                             <option value = "recently">Recently</option>
                             <option value = "priceAscent">Price ascent</option> 
                             <option value = "priceDescent">Price descent</option>
-                          </select>
+                        </select>
 
+                        <div className="form-check form-switch">
                           <input 
+                            className="form-check-input"
                             type ="checkbox" 
+                            role="switch"
                             id = "cbox2" 
                             value = "onsales"
                             checked = {isChecked}
                             onChange = {handleChange}
-                            /> 
-                            <label htmlFor="cbox2">Only product on sale</label>
+                          /> 
+                          <strong htmlFor="cbox2">Only product on sale</strong>
                         </div>
-        
-      
-                      </form>
+                      </div>
+                  </form>      
                 </div>
 
-            <CollectionList 
-                products={products} 
-                setProducts = {setProducts}
-                deleteProduct = {onDeleteProduct}
-               
-            />   
+                <CollectionList 
+                    products={products} 
+                    setProducts = {setProducts}
+                    deleteProduct = {onDeleteProduct}                 
+                />  
+            </div>           
     </div>
   );
 }
