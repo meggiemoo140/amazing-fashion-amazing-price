@@ -54,6 +54,16 @@ VALUES
 
 INSERT INTO products (itemId, name, price, img, link, sales_price )
 VALUES
+
+    (
+        '37007732',
+        'Blusa textura volantes', 
+        35.99,  
+        'https://st.mngbcn.com/rcs/pics/static/T3/fotos/outfit/S20/37007732_99-99999999_01.jpg?ts=1661501729390&imwidth=450&imdensity=2',
+        'https://shop.mango.com/es/mujer/camisas-camisas/blusa-textura-volantes_37007732.html',
+        0
+    ),
+    
     (   
         '2111785',
         'Top punto flecos',
@@ -81,14 +91,7 @@ VALUES
         95.95
     ),
 
-    (
-        '37007732',
-        'Blusa textura volantes', 
-        35.99,  
-        'https://st.mngbcn.com/rcs/pics/static/T3/fotos/outfit/S20/37007732_99-99999999_01.jpg?ts=1661501729390&imwidth=450&imdensity=2',
-        'https://shop.mango.com/es/mujer/camisas-camisas/blusa-textura-volantes_37007732.html',
-        0
-    ),
+
 
     (
         '37057765',

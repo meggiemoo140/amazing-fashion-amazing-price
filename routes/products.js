@@ -1,3 +1,4 @@
+const { request } = require('express');
 var express = require('express');
 var router = express.Router();
 const db = require('../model/helper');
@@ -119,10 +120,11 @@ router.post("/", async (req, res) => {
 
 
 // PUT modified product
-router.put("/:id", async (req, res) => {
+router.put("/update/:id", async (req, res) => {
   let product_id = req.params.id;
+  console.log(product_id);
   let { id, itemId, name, price, img, link, sales_price} = req.body;
-
+  console.log(req.body.sales_price);
   try {
       let result = await db(`SELECT * FROM products WHERE id = ${product_id}`);  // does product exist?
       if (result.data.length === 0) {

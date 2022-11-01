@@ -3,12 +3,25 @@ export const getProducts =  () => {
   return  fetch('/products').then((response)=> response.json());  
 }
 
+export const updateProduct =  (product) => {
+
+  let options = {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product)
+  };
+  
+  return fetch(`/products/update/${product.id}`, options)
+  .then((response) => response.json());
+
+}
+
 export const addProduct =  (product) => {
   let options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product)
-};
+  };
 
   const response =  fetch('/products', options);
   return  response.json(); 
@@ -17,7 +30,7 @@ export const addProduct =  (product) => {
 export const deleteProduct =  (id) => {
   let options = {
     method: 'DELETE'
-};
+  };
   const response =  fetch(`/products/${id}`, options);
   return  response.json();
 }

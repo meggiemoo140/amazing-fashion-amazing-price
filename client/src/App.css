@@ -9,7 +9,6 @@
 }  
 
 .App {
-  /* background-image: url('https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiYWNrZ3JvdW5kJTIwY2xvdGhlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ; */
   font-family: montserrat;
   background: #d9bcaa;
 
@@ -93,11 +92,11 @@ li h3{
     display: none;
   }
   
-  .shop{
+  li {
     height: 150px;
   }
 
-  .shop img{
+  li img{
     height: 150px;
     width: 200px;
   }

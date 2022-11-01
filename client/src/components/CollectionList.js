@@ -35,7 +35,7 @@ function CollectionList(props) {
                             </a>
 
                             <button  className="btn btn-outline-dark" onClick={() => {props.deleteProduct(p.id)}} type="button">
-                              Delete 
+                              Remove 
                             </button>
 
                           </p>
