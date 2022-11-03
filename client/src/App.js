@@ -5,22 +5,28 @@ import {
   getProducts,
   addProduct,
   deleteProduct,
-  updateProduct
+  updateProduct,
 } from "./services";
 import "./App.css";
+import NavBar from "./components/NavBar";
+import Login from "./Views/Login";
+import { Routes, Route } from "react-router-dom";
+import HomeView from "./Views/HomeView";
+import Profile from "./Views/Profile";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [memoryProduct, setMemoryProduct] = useState([]); //store those products are on sale
   const [isChecked, setIsChecked] = useState(false);
-  // let memoryProduct = [];
-  // useEffect() will call getProducts() when App is mounted on the DOM
+  //let memoryProduct = [];
+  //useEffect()// will call getProducts() when App is mounted on the DOM
 
+  // emulateChangePrice();
   const emulateChangePrice = useCallback((productList) => {
     const everyTen = [
       { itemId: "2111785", sales_price: 18.5 },
       { itemId: "37007732", sales_price: 9.9 },
-      { itemId: "37057765", sales_price: 19.99 }
+      { itemId: "37057765", sales_price: 19.99 },
     ];
 
     const updateDataPost = ({ itemId, sales_price }) => {
@@ -32,7 +38,9 @@ function App() {
           setProducts(response);
         });
 
-        alert(`${product.name} is on sale now! Only ${sales_price}€.Go to buy it!`);
+        alert(
+          `${product.name} is on sale now! Only ${sales_price}€.Go to buy it!`
+        );
       }
     };
 
@@ -46,8 +54,6 @@ function App() {
       }
     }, 1000 * 60);
   }, []);
-
-  // emulateChangePrice();
 
   useEffect(() => {
     getProducts()
@@ -66,35 +72,35 @@ function App() {
   }, [emulateChangePrice]);
 
   //handle the checkbox
-  const handleChange = (event) => {
-    let optionalProducts = [...memoryProduct];
+  // const handleChange = (event) => {
+  //   let optionalProducts = [...memoryProduct];
 
-    let key = "price";
-    //get the checkbox,find if it´s checked
-    if (event.target.id === "cbox2") {
-      setIsChecked(event.target.checked);
-      optionalProducts = event.target.checked
-        ? optionalProducts.filter((p) => p.sales_price > 0)
-        : [...optionalProducts];
-      key = event.target.checked ? "sales_price" : "price";
-    }
+  //   let key = "price";
+  //   //get the checkbox,find if it´s checked
+  //   if (event.target.id === "cbox2") {
+  //     setIsChecked(event.target.checked);
+  //     optionalProducts = event.target.checked
+  //       ? optionalProducts.filter((p) => p.sales_price > 0)
+  //       : [...optionalProducts];
+  //     key = event.target.checked ? "sales_price" : "price";
+  //   }
 
-    //if it´s checked, create an array to store the products or onsales products
+  //   //if it´s checked, create an array to store the products or onsales products
 
-    //get the value of menu
-    let option = document.getElementById("menu").value;
+  //   //get the value of menu
+  //   let option = document.getElementById("menu").value;
 
-    //if the menu is priceAscent, sort it in the ascending order
-    if (option === "priceAscent") {
-      setProducts(optionalProducts.sort((a, b) => a[key] - b[key]));
+  //   //if the menu is priceAscent, sort it in the ascending order
+  //   if (option === "priceAscent") {
+  //     setProducts(optionalProducts.sort((a, b) => a[key] - b[key]));
 
-      //else the menu is priceDescent, sort it in the descending order
-    } else if (option === "priceDescent") {
-      setProducts(optionalProducts.sort((a, b) => b[key] - a[key]));
-    } else {
-      setProducts(optionalProducts);
-    }
-  };
+  //     //else the menu is priceDescent, sort it in the descending order
+  //   } else if (option === "priceDescent") {
+  //     setProducts(optionalProducts.sort((a, b) => b[key] - a[key]));
+  //   } else {
+  //     setProducts(optionalProducts);
+  //   }
+  // };
 
   const onAddProduct = (product) => {
     addProduct(product)
@@ -118,13 +124,18 @@ function App() {
 
   return (
     <div className="App">
-      <AddProductForm addProductCb={onAddProduct} />
-
-      <div className="wrapper">
-        <h1>My Collection list</h1>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Profile" element={<Profile />} />
+      </Routes>
+      {/* <AddProductForm addProductCb={onAddProduct} /> */}
+      {/* //<div className="wrapper"> */}
+      {/* <h1>My Collection list</h1>
 
         {/* <!-- Product Order Menu --> */}
-        <div className="container-table">
+      {/* <div className="container-table">
           <form id="product-form">
             <div className="orderList">
               <strong>Order by:</strong>
@@ -154,15 +165,10 @@ function App() {
                 <strong htmlFor="cbox2">Only product on sale</strong>
               </div>
             </div>
-          </form>
-        </div>
+          </form> */}
+      {/* </div> */}
 
-        <CollectionList
-          products={products}
-          setProducts={setProducts}
-          deleteProduct={onDeleteProduct}
-        />
-      </div>
+      {/* </div>  */}
     </div>
   );
 }

@@ -1,0 +1,14 @@
+nav ul {
+  margin: 30px;
+}
+nav li {
+  display: inline-block;
+  margin: 0 5px;
+}
+nav a {
+  padding: 10px;
+}
+nav a.active {
+  background-color: #ccc;
+  color: #f09036;
+}
