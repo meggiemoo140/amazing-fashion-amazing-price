@@ -1,14 +1,14 @@
-nav ul {
+ul {
   margin: 30px;
 }
-nav li {
+li {
   display: inline-block;
   margin: 0 5px;
 }
-nav a {
+a {
   padding: 10px;
 }
-nav a.active {
-  background-color: #ccc;
+a.active {
+  background-color: rgb(250, 207, 207);
   color: #f09036;
 }

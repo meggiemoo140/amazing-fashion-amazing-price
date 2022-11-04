@@ -9,17 +9,40 @@ import {
 } from "./services";
 import "./App.css";
 import Login from "./Views/Login";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomeView from "./Views/HomeView";
 import Profile from "./Views/Profile";
+import Local from "./helpers/Local";
+import Api from "./helpers/Api";
 
 function App() {
+  const [user, setUser] = useState(Local.getUser()); // should i use these names??
+  const [loginErrorMsg, setLoginErrorMsg] = useState("");
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
   const [memoryProduct, setMemoryProduct] = useState([]); //store those products are on sale
   // const [isChecked, setIsChecked] = useState(false);
   // let memoryProduct = [];
   // useEffect() will call getProducts() when App is mounted on the DOM
+
+  async function doLogin(email, password) {
+    let myresponse = await Api.loginUser(email, password);
+    if (myresponse.ok) {
+      Local.saveUserInfo(myresponse.data.token, myresponse.data.user);
+      setUser(myresponse.data.user);
+      setLoginErrorMsg("");
+      navigate("/");
+    } else {
+      setLoginErrorMsg("Login failed");
+    }
+  }
+  function doLogout() {
+    Local.removeUserInfo();
+    setUser(null);
+    // (NavBar will send user to home page)
+  }
 
   //emulateChangePrice();
   const emulateChangePrice = useCallback((productList) => {
@@ -132,7 +155,15 @@ function App() {
             <HomeView products={products} memoryProduct={memoryProduct} />
           }
         />
-        <Route path="Login" element={<Login />} />
+        <Route
+          path="Login"
+          element={
+            <Login
+              loginCb={(e, p) => doLogin(e, p)}
+              loginError={loginErrorMsg}
+            />
+          }
+        />
         <Route path="Profile" element={<Profile />} />
       </Routes>
 

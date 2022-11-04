@@ -188,12 +188,14 @@ function HomeView(props) {
           // deleteProduct={onDeleteProduct} */}
         {/* /> */}
       </div>
-      <CollectionList
-        products={newProducts}
-        memoryProduct={props.memoryProduct}
-        // setProducts={setProducts}
-        //   deleteProduct={props.onDeleteProduct}
-      />
+      <div className="tlist">
+        <CollectionList
+          products={newProducts}
+          memoryProduct={props.memoryProduct}
+          // setProducts={setProducts}
+          //   deleteProduct={props.onDeleteProduct}
+        />
+      </div>
     </div>
   );
 }

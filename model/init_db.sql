@@ -12,13 +12,16 @@ SET foreign_key_checks = 1;  -- Turn on FK
 -- Create Tables
 --
 
-CREATE TABLE `users`(
+CREATE TABLE users(
     `id` INT UNSIGNED NOT NULL PRIMARY KEY  AUTO_INCREMENT,
     `firstname` VARCHAR(255) NULL,
     `lastname` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL
 );
+
+
+
 
 CREATE TABLE `products`(
     `id` INT UNSIGNED NOT NULL PRIMARY KEY  AUTO_INCREMENT,
@@ -43,13 +46,12 @@ ALTER TABLE
 ALTER TABLE
     `collection_list` ADD CONSTRAINT `collection_list_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE;
 
--- Insert some sample data
+-- Insert some sample data. bono pass1, Bjork pass2
 
 INSERT INTO users (firstname, lastname, email, password)
 VALUES
-    ('Bono', 'Juan', 'hhhhh2@gmail.com', '231hfsu&'),
-    ('Bjork', 'Jose',  'ttttt2@gmail.com', '745fds&');
-
+    ('Bono', 'Juan', 'hhhhh2@gmail.com', '$2b$12$eFzMWbS9SogNtxkmo3J7aO8FQMFQSKbtpwLMIOVsF6GGKpTQdgq.W'),
+    ('Bjork', 'Jose',  'ttttt2@gmail.com', '$2b$12$WZcGPyrkCvD5e8m0Qz/nFOdBryUcsp6uDlE2MDo/AjuBhPrQBCfI6');
 
 
 INSERT INTO products (itemId, name, price, img, link, sales_price )
@@ -120,3 +122,5 @@ VALUES
     (2, 4),
     (2, 5),
     (2, 6);
+
+
