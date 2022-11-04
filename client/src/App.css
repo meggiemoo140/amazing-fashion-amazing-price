@@ -24,14 +24,16 @@
   text-transform: uppercase;
 }
 
-.CollectionList {
-  display: flex;
-}
+/* .CollectionList {
+  //display: flex;
+} */
 
 .shop {
   flex: 75%;
 }
-
+.login {
+  text-align: center;
+}
 li {
   display: flex;
   width: 100%;

@@ -8,20 +8,20 @@ import {
   updateProduct,
 } from "./services";
 import "./App.css";
-import NavBar from "./components/NavBar";
 import Login from "./Views/Login";
 import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
 import HomeView from "./Views/HomeView";
 import Profile from "./Views/Profile";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [memoryProduct, setMemoryProduct] = useState([]); //store those products are on sale
-  const [isChecked, setIsChecked] = useState(false);
-  //let memoryProduct = [];
-  //useEffect()// will call getProducts() when App is mounted on the DOM
+  // const [isChecked, setIsChecked] = useState(false);
+  // let memoryProduct = [];
+  // useEffect() will call getProducts() when App is mounted on the DOM
 
-  // emulateChangePrice();
+  //emulateChangePrice();
   const emulateChangePrice = useCallback((productList) => {
     const everyTen = [
       { itemId: "2111785", sales_price: 18.5 },
@@ -126,17 +126,21 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Profile" element={<Profile />} />
+        <Route
+          path="/"
+          element={
+            <HomeView products={products} memoryProduct={memoryProduct} />
+          }
+        />
+        <Route path="Login" element={<Login />} />
+        <Route path="Profile" element={<Profile />} />
       </Routes>
-      {/* <AddProductForm addProductCb={onAddProduct} /> */}
-      {/* //<div className="wrapper"> */}
-      {/* <h1>My Collection list</h1>
 
-        {/* <!-- Product Order Menu --> */}
+      {/* <div className="wrapper">
+        {/* <h1>My Collection list</h1> */}
+      {/* <!-- Product Order Menu --> */}
       {/* <div className="container-table">
-          <form id="product-form">
+          <form id="products-form">
             <div className="orderList">
               <strong>Order by:</strong>
             </div>
@@ -157,18 +161,22 @@ function App() {
                   className="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="cbox2"
-                  value="onsales"
+                  id="cbox2" */}
+      {/* value="onsales"
                   checked={isChecked}
                   onChange={handleChange}
                 />
                 <strong htmlFor="cbox2">Only product on sale</strong>
               </div>
             </div>
-          </form> */}
+          </form>
+        </div> */}
+      {/* <CollectionList
+          products={products}
+         // setProducts={setProducts}
+          // deleteProduct={onDeleteProduct} */}
+      {/* /> */}
       {/* </div> */}
-
-      {/* </div>  */}
     </div>
   );
 }

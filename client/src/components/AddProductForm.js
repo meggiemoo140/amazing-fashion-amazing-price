@@ -43,6 +43,7 @@ function AddProductForm(props) {
                 className="d-inline-block align-text-top"
               ></img>
             </a>
+
             <div className="input">
               <input
                 className="form-control me-2"
