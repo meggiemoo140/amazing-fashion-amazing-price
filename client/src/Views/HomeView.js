@@ -102,7 +102,7 @@ function HomeView(props) {
 
   return (
     <div>
-      <h1>HOME View</h1>
+      <h1>HOME</h1>
       {/* <div className="wrapper">
         <h1>My Collection list</h1>
         {/* <!-- Product Order Menu --> */}

@@ -12,11 +12,13 @@ import Login from "./Views/Login";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomeView from "./Views/HomeView";
-import Profile from "./Views/Profile";
 import Local from "./helpers/Local";
 import Api from "./helpers/Api";
 import PrivateRoute from "./components/PrivateRoute";
 import ErrorView from "./Views/ErrorView";
+import MembersOnlyView from "./Views/MembersOnlyView";
+import UsersView from "./Views/UsersView";
+import ProfileView from "./Views/ProfileView";
 
 function App() {
   const [user, setUser] = useState(Local.getUser()); // should i use these names??
@@ -149,43 +151,52 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomeView products={products} memoryProduct={memoryProduct} />
-          }
-        />
-        <Route
-          path="/Login"
-          element={
-            <Login
-              loginCb={(e, p) => doLogin(e, p)}
-              loginError={loginErrorMsg}
-            />
-          }
-        />
+      <NavBar user={user} logoutCb={doLogout} />
+      <div className="container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomeView products={products} memoryProduct={memoryProduct} />
+            }
+          />
+          <Route path="/users" element={<UsersView />} />
+          <Route
+            path="/ProfileView"
+            element={
+              <PrivateRoute>
+                <ProfileView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/members-only"
+            element={
+              <PrivateRoute>
+                <MembersOnlyView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/Login"
+            element={
+              <Login
+                loginCb={(e, p) => doLogin(e, p)}
+                loginError={loginErrorMsg}
+              />
+            }
+          />
 
-        <Route
-          path="/Profile"
-          element={
-            <PrivateRoute>
-              <Profile />
-            </PrivateRoute>
-          }
-        />
-        {/* <Route path="Profile" element={<Profile />} /> */}
-        <Route
-          path="*"
-          element={<ErrorView code="404" text="Page not found" />}
-        />
-      </Routes>
+          <Route
+            path="*"
+            element={<ErrorView code="404" text="Page not found" />}
+          />
+        </Routes>
 
-      {/* <div className="wrapper">
+        {/* <div className="wrapper">
         {/* <h1>My Collection list</h1> */}
-      {/* <!-- Product Order Menu --> */}
-      {/* <div className="container-table">
+        {/* <!-- Product Order Menu --> */}
+        {/* <div className="container-table">
           <form id="products-form">
             <div className="orderList">
               <strong>Order by:</strong>
@@ -208,7 +219,7 @@ function App() {
                   type="checkbox"
                   role="switch"
                   id="cbox2" */}
-      {/* value="onsales"
+        {/* value="onsales"
                   checked={isChecked}
                   onChange={handleChange}
                 />
@@ -217,12 +228,13 @@ function App() {
             </div>
           </form>
         </div> */}
-      {/* <CollectionList
+        {/* <CollectionList
           products={products}
          // setProducts={setProducts}
           // deleteProduct={onDeleteProduct} */}
-      {/* /> */}
-      {/* </div> */}
+        {/* /> */}
+        {/* </div> */}
+      </div>
     </div>
   );
 }

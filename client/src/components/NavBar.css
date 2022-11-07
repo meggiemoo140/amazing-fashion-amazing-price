@@ -9,6 +9,5 @@ a {
   padding: 10px;
 }
 a.active {
-  background-color: rgb(250, 207, 207);
-  color: #f09036;
+  color: #c28c33;
 }

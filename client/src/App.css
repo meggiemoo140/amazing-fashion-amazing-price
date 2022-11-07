@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+label {
+  width: 100%;
+}
 .navbar {
   background-color: rgb(194, 140, 51);
 }
@@ -23,7 +25,9 @@
   text-align: center;
   text-transform: uppercase;
 }
-
+.navbar-nav {
+  text-align: right;
+}
 /* .CollectionList {
   display: flex;
 } */

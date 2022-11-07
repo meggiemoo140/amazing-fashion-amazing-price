@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function NavBar(props) {
   return (
@@ -19,11 +19,18 @@ function NavBar(props) {
 
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">
+            <a class="active" href="#">
+              <i class="fa fa-home"></i>
+            </a>
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/Login">Log in</NavLink>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/users">
+            Users
+          </NavLink>
         </li>
+
         {props.user && (
           <li className="nav-item">
             <NavLink className="nav-link" to="/members-only">
@@ -31,18 +38,19 @@ function NavBar(props) {
             </NavLink>
           </li>
         )}
+
         <li>
-          <NavLink to="/Profile">Profile</NavLink>
+          <NavLink to="/ProfileView">ProfileView</NavLink>
         </li>
       </ul>
 
       {props.user ? (
         <ul className="navbar-nav">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink className="nav-link" to={`/users/${props.user.id}`}>
-              Profile ({props.user.username})
+              Profile {props.user.username}
             </NavLink>
-          </li>
+          </li> */}
           <li className="nav-item">
             {/* Log out user. Then go to home page. */}
             <Link className="nav-link" to="/" onClick={props.logoutCb}>
