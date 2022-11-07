@@ -103,6 +103,9 @@ function HomeView(props) {
   return (
     <div>
       <h1>HOME</h1>
+      <hr></hr>
+      <br></br>
+      <h3 className="msg"> Add a link ...</h3>
       {/* <div className="wrapper">
         <h1>My Collection list</h1>
         {/* <!-- Product Order Menu --> */}

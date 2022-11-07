@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../helpers/Api";
+import "./Users.css";
 
 function UsersView(props) {
   const [users, setUsers] = useState([]);
@@ -34,7 +35,7 @@ function UsersView(props) {
       <hr></hr>
       <ul>
         {users.map((e) => (
-          <h2>
+          <h2 className="names">
             {" "}
             <li key={e.id}>{e.firstname}</li>
           </h2>

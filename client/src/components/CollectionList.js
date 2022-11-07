@@ -4,6 +4,8 @@ import "../App.css";
 function CollectionList(props) {
   return (
     <div className="CollectionList">
+      <hr></hr>
+
       <h1>My Collection list</h1>
 
       <div className="shop">
@@ -24,7 +26,7 @@ function CollectionList(props) {
                 )}
 
                 <p className="btn-area">
-                  <a href={p.link}>
+                  <a className="hate" href={p.link}>
                     <button className="btn btn-dark" type="button">
                       Buy
                     </button>

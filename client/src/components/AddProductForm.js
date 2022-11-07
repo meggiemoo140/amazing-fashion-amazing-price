@@ -34,14 +34,14 @@ function AddProductForm(props) {
         <nav className="navbar">
           <div className="container-fluid">
             <a className="navbar-brand">
-              Amazing Price
-              <img
+              <h2>Amazing Price</h2>
+              {/* <img
                 src="https://emojipedia-us.s3.amazonaws.com/source/noto-emoji-animations/344/smiling-face-with-heart-eyes_1f60d.gif"
                 alt="Logo"
                 width="30"
                 height="24"
                 className="d-inline-block align-text-top"
-              ></img>
+              ></img> */}
             </a>
 
             <div className="input">
@@ -55,7 +55,7 @@ function AddProductForm(props) {
               />
             </div>
             <div classname="inButton">
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-dark" type="submit">
                 Add to my list
               </button>
             </div>

@@ -1,13 +1,31 @@
 ul {
   margin: 30px;
+  color: black;
 }
 li {
   display: inline-block;
   margin: 0 5px;
+  color: black;
 }
 a {
   padding: 10px;
+  text-decoration: none;
+  color: black;
 }
 a.active {
-  color: #c28c33;
+  text-decoration: none;
+  color: black;
+}
+ul.active {
+  text-decoration: none;
+  color: black;
+}
+ul :hover {
+  color: black;
+}
+.navbar-brand {
+  background-color: #c28c33;
+}
+h2 {
+  background-color: #c28c33;
 }

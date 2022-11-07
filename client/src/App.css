@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  background-color: rgb(217, 188, 170);
 }
 label {
   width: 100%;
@@ -28,10 +30,49 @@ label {
 .navbar-nav {
   text-align: right;
 }
-/* .CollectionList {
-  display: flex;
-} */
+.content {
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  background-color: aliceblue;
+}
+h1 {
+  background-color: rgb(217, 188, 170);
+}
+h3 {
+  background-color: aliceblue;
+}
+h4 {
+  background-color: aliceblue;
+}
+.btn-area {
+  background-color: aliceblue;
+}
+.btn btn-dark {
+  background-color: aliceblue;
+}
 
+btn-area {
+  background-color: aliceblue;
+}
+.whtbut {
+  background-color: aliceblue;
+}
+.productImg {
+  background-color: aliceblue;
+}
+.hate {
+  background-color: aliceblue;
+}
+.msg {
+  background-color: rgb(217, 188, 170);
+}
+.container-fluid {
+  background-color: #c28c33;
+}
+.names {
+  background-color: #d9bcaa;
+}
 /* .shop {
   flex: 75%;
 }
