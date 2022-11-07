@@ -15,6 +15,8 @@ import HomeView from "./Views/HomeView";
 import Profile from "./Views/Profile";
 import Local from "./helpers/Local";
 import Api from "./helpers/Api";
+import PrivateRoute from "./components/PrivateRoute";
+import ErrorView from "./Views/ErrorView";
 
 function App() {
   const [user, setUser] = useState(Local.getUser()); // should i use these names??
@@ -156,7 +158,7 @@ function App() {
           }
         />
         <Route
-          path="Login"
+          path="/Login"
           element={
             <Login
               loginCb={(e, p) => doLogin(e, p)}
@@ -164,7 +166,20 @@ function App() {
             />
           }
         />
-        <Route path="Profile" element={<Profile />} />
+
+        <Route
+          path="/Profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        {/* <Route path="Profile" element={<Profile />} /> */}
+        <Route
+          path="*"
+          element={<ErrorView code="404" text="Page not found" />}
+        />
       </Routes>
 
       {/* <div className="wrapper">
