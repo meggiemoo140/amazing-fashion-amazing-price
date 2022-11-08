@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Api from "../helpers/Api";
 import "./Users.css";
+import { FiUsers } from "react-icons/fi";
 
 function UsersView(props) {
   const [users, setUsers] = useState([]);
@@ -31,7 +32,15 @@ function UsersView(props) {
 
   return (
     <div className="UsersView">
-      <h1>Users</h1>
+      <h1>Users </h1>
+      <p>
+        Join our ever growing list of high fashion brands and influencers...
+      </p>
+      <img
+        class="img-fluid"
+        src="https://vasquiat.com/modules/custombanners/views/img/uploads/648ff9ef433651cb6696815d7f2074862e55c888.jpg"
+      />
+
       <hr></hr>
       <ul>
         {users.map((e) => (
@@ -41,6 +50,21 @@ function UsersView(props) {
           </h2>
         ))}
       </ul>
+      <hr></hr>
+      <div class="box">
+        <div class="quotes">
+          <h2 class="quotes">VOGUE</h2>
+        </div>
+        <div>
+          <h2 class="quotes">REFINERY29</h2>
+        </div>
+        <div>
+          <h2 class="quotes">WWD</h2>
+        </div>
+        <div>
+          <h2 class="quotes">FASHIONISTA</h2>
+        </div>
+      </div>
     </div>
   );
 }

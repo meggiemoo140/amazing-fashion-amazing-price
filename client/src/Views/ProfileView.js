@@ -35,12 +35,76 @@ function ProfileView(props) {
     <div>
       <p>PROFILE</p>
       <div className="ProfileView">
-        <h1>Profile View</h1>
+        <h1>My Profile</h1>
+        <br></br>
         ID: {user.id}
         <br />
         Username: {user.firstname}
         <br />
         Email: {user.email}
+      </div>
+
+      <br></br>
+      <hr></hr>
+      <div className="row mb-4">
+        <div className="col my-2">
+          <div class="card">
+            <img
+              src="https://vasquiat.com/modules/custombanners/views/img/uploads/33872afe81bc746b2bc9c03009e9d1c7ac7cbc69.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Personal Info</h5>
+              <p class="card-text"></p>
+              <a
+                href="http://localhost:3000/LeveledMoves"
+                class="btn btn-outline-primary"
+              >
+                Click here!
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="col my-2">
+          <div class="card">
+            <img
+              src="https://vasquiat.com/modules/custombanners/views/img/uploads/52e4699008ef1ff219945f94d18497ec4c3f2f88.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Your Vouchers</h5>
+              <p class="card-text"></p>
+              <a
+                href="http://localhost:3000/TurnView"
+                class="btn btn-outline-primary"
+                role="button"
+              >
+                Click here!
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="col my-2">
+          <div class="card">
+            <img
+              src="https://vasquiat.com/modules/custombanners/views/img/uploads/6fd2c5df25a1fc6d10ef1e176bf23b2139189050.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Credit Cards</h5>
+              <p class="card-text"></p>
+              <a
+                href="http://localhost:3000/LeveledMoves"
+                class="btn btn-outline-primary"
+              >
+                Click here!
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

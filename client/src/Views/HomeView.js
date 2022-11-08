@@ -105,6 +105,7 @@ function HomeView(props) {
       <h1>HOME</h1>
       <hr></hr>
       <br></br>
+
       <h3 className="msg"> Add a link to watch your item...</h3>
       <br></br>
       {/* <div className="wrapper">

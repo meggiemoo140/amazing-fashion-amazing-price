@@ -99,6 +99,39 @@ textarea {
   display: block;
   height: 7em;
 }
+.box.react-draggable {
+  border-radius: 10px;
+  margin-right: 200px;
+  margin-bottom: 20px;
+  padding: 40px, 40px;
+}
+#delete {
+  background-color: aliceblue;
+  margin: 10px;
+
+  border-radius: 20%;
+}
+.card {
+  background-color: #f3f3f3;
+}
+.card img {
+  background-color: #f3f3f3;
+}
+.card-body {
+  background: #f3f3f3;
+}
+.card-title {
+  background-color: #f3f3f3;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.quotes {
+  background-color: rgb(217, 188, 170);
+}
 /* .shop {
   flex: 75%;
 }
