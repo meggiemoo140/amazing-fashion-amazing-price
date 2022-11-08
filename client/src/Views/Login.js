@@ -26,7 +26,7 @@ function Login(props) {
   return (
     <div className="LoginView row">
       <div className="col-4 offset-4">
-        <h2>Login</h2>
+        <h2 className="log">Login</h2>
 
         {props.loginError && (
           <div className="alert alert-danger">{props.loginError}</div>

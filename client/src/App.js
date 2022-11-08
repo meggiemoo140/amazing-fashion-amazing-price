@@ -19,7 +19,7 @@ import ErrorView from "./Views/ErrorView";
 import MembersOnlyView from "./Views/MembersOnlyView";
 import UsersView from "./Views/UsersView";
 import ProfileView from "./Views/ProfileView";
-import { FaBeer } from "react-icons/fa";
+import Footer from "./Views/Footer";
 
 function App() {
   const [user, setUser] = useState(Local.getUser()); // should i use these names??
@@ -193,6 +193,7 @@ function App() {
             element={<ErrorView code="404" text="Page not found" />}
           />
         </Routes>
+        <Footer />
 
         {/* <div className="wrapper">
         {/* <h1>My Collection list</h1> */}

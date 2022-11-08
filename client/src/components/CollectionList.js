@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import { CiTrash } from "react-icons/ci";
 
 function CollectionList(props) {
   return (
@@ -34,7 +35,7 @@ function CollectionList(props) {
 
                   <button
                     className="btn btn-outline-dark"
-                    onClick={() => {
+                    onClick={(e) => {
                       props.deleteProduct(p.id);
                     }}
                     type="button"

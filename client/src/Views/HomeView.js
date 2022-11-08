@@ -105,7 +105,8 @@ function HomeView(props) {
       <h1>HOME</h1>
       <hr></hr>
       <br></br>
-      <h3 className="msg"> Add a link ...</h3>
+      <h3 className="msg"> Add a link to watch your item...</h3>
+      <br></br>
       {/* <div className="wrapper">
         <h1>My Collection list</h1>
         {/* <!-- Product Order Menu --> */}
@@ -156,6 +157,7 @@ function HomeView(props) {
         <div className="container-table">
           <form id="products-form">
             <div className="orderList">
+              <br></br>
               <strong>Order by:</strong>
             </div>
             <div className="drop-box">

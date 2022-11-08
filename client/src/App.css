@@ -73,6 +73,32 @@ btn-area {
 .names {
   background-color: #d9bcaa;
 }
+.log {
+  background-color: rgb(217, 188, 170);
+}
+.benefits {
+  background-color: rgb(217, 188, 170);
+  text-align: center;
+  color: aliceblue;
+}
+.bens {
+  background-color: rgb(217, 188, 170);
+}
+.Footer {
+  text-align: center;
+  border: 1px solid black;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.itemin {
+  background-color: aliceblue;
+}
+textarea {
+  width: 100%;
+  display: block;
+  height: 7em;
+}
 /* .shop {
   flex: 75%;
 }

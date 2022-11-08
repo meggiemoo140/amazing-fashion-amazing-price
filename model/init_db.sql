@@ -46,7 +46,7 @@ ALTER TABLE
 ALTER TABLE
     `collection_list` ADD CONSTRAINT `collection_list_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE;
 
--- Insert some sample data. bono pass1, Bjork pass2
+-- Insert some sample data. bono pass1, Bjork 
 
 INSERT INTO users (firstname, lastname, email, password)
 VALUES
