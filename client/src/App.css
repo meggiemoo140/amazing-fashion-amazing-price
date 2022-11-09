@@ -132,6 +132,13 @@ textarea {
 .quotes {
   background-color: rgb(217, 188, 170);
 }
+
+.sub {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 250px;
+}
+
 /* .shop {
   flex: 75%;
 }

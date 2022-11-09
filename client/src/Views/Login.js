@@ -60,10 +60,11 @@ function Login(props) {
               />
             </label>
           </div>
-
-          <button type="submit" className="btn btn-secondary">
-            Submit
-          </button>
+          <div class="sub">
+            <button type="submit" className="btn btn-secondary">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

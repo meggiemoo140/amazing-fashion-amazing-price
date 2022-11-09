@@ -88,8 +88,8 @@ function MembersOnlyView(props) {
 
       <hr></hr>
       <h4 className="bens">
-        These VIP benefits give you access to a fun, fresh and diverse catalogue
-        first, allowing you to discover and adopt the latest trends in the
+        This VIP area gives you access to a fun, fresh and diverse forum,
+        allowing you to discover the latest news, trends snd hot topics in the
         market, making you the fashion experts!
       </h4>
       <br></br>
